@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DealBazaar</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body {
+  background-color: white;
+  color: black;
+}
+#symbol {
+	margin-top: 5px;
+	margin-left: 80px;
+}
+#heading {
+  background-color: white;
+  position: absolute;
+  margin-top: -95px;
+	margin-left: 160px;
+  border: 1px solid white;
+	font-size: 60px;
+}
+#subheading {
+  background-color: red;
+  position: absolute;
+  margin-top: -72px;
+	margin-left: 110px;
+  border: 1px solid white;
+	font-size: 60px;
+}
+
+.search_product form {
+  color: black;
+  margin-top: 50px;
+	margin-left: 500px;
+	font-size: 20px;
+}
+.search_product div {
+  margin-top: -150px;
+	margin-left: 620px;
+  color: black;
+}
+
+</style>
+</head>
+<body>
+  <div id="symbol">
+	<img src="https://img.purch.com/rc/300x200/aHR0cDovL3d3dy5idXNpbmVzc25ld3NkYWlseS5jb20vaW1hZ2VzL2kvMDAwLzAwNC8xOTIvb3JpZ2luYWwvc2hvcHBpbmctY2FydC1idXR0b24uanBn" height="100" width="100"/>
+	</div>
+  <div id="heading">
+	Deal<div id="subheading">Bazaar</div>
+  </div>
+  <section class="search_product">
+		<form id="submit_form" action="http://localhost:5000/result" method="post">
+      Search product here...<br><br>
+			<input type="text" id="product_name" placeholder="Search..." name="product_name"><br><br>
+      Choose e-Platform...<br><br>
+      <input type="radio" name="ePlatform" value="AliExpress" checked> AliExpress<br>
+      <input type="radio" name="ePlatform" value="Flipkart"> Flipkart<br>
+      <input type="radio" name="ePlatform" value="Amazon"> Amazon<br>
+      <input type="radio" name="ePlatform" value="Ebay"> Ebay<br><br>
+		  <input type="submit" value="Submit"/>
+		</form>
+		<div id="loading">
+		<img src="https://thumbs.gfycat.com/UniformWideeyedAfricanbushviper-max-1mb.gif" style="display: none;" id="loading-image" height="300" width="300" alt="Loading..."/>
+		</div>
+    <script>
+			$('#submit_form').submit(function() {
+    			$('#loading-image').show();
+			});
+		</script>
+  </section>
+</body>
+</html>

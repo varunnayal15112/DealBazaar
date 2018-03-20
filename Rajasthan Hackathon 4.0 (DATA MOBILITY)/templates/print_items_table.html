@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!--
+  <form id="return_home" action="http://localhost:5000/home" method="post">
+    <input type="submit" value="Click Here"/>
+  </form>
+-->
+<a href="http://localhost:5000">Go To Home</a>
+  <table border="1">
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Discount Price</th>
+      <th>Product Rating</th>
+      <th>Product Rating Count</th>
+      <th>URL/Link</th>
+    </tr>
+    {% for item in items %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td><a href={{item[5]}}>Click Here</a></td>
+        </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
